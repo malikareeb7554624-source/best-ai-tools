@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Tools Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>🔥 AI Tools Hub</h1>
+<p>100 Best AI Tools in One Place</p>
+</header>
+
+<input type="text" id="search" placeholder="Search AI tools...">
+
+<div class="container" id="toolsContainer"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>body{
+font-family: Arial;
+background:#0f172a;
+color:white;
+margin:0;
+}
+
+header{
+text-align:center;
+padding:30px;
+background:#1e293b;
+}
+
+h1{
+font-size:40px;
+}
+
+#search{
+width:60%;
+padding:12px;
+margin:20px auto;
+display:block;
+border-radius:8px;
+border:none;
+font-size:16px;
+}
+
+.container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:40px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.card a{
+color:#38bdf8;
+text-decoration:none;
+}fetch("tools.json")
+.then(res => res.json())
+.then(data => {
+
+const container = document.getElementById("toolsContainer");
+
+data.forEach(tool => {
+
+container.innerHTML += `
+<div class="card">
+<h3>${tool.name}</h3>
+<p>${tool.desc}</p>
+<a href="${tool.link}" target="_blank">Visit Tool</a>
+</div>
+`;
+
+});
+
+});[
+{
+"name":"ChatGPT",
+"desc":"Best AI chatbot for writing and coding",
+"link":"https://chat.openai.com"
+},
+
+{
+"name":"Midjourney",
+"desc":"AI image generator",
+"link":"https://midjourney.com"
+},
+
+{
+"name":"Runway ML",
+"desc":"AI video editing tool",
+"link":"https://runwayml.com"
+},
+
+{
+"name":"Copy.ai",
+"desc":"AI copywriting tool",
+"link":"https://copy.ai"
+},
+
+{
+"name":"Jasper AI",
+"desc":"AI content writing tool",
+"link":"https://jasper.ai"
+}
+
+]
